@@ -1,0 +1,38 @@
+{% extends 'padre.html' %}
+
+{% load static %}
+
+
+{% block ContenidoNuevo %}
+<section class="about-section text-center" id="about">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-lg-8">
+                <h2 class="text-white mb-4">Cargar torneos</h2>
+                <p class="text-white-50">
+                    {% if miFormulario.errors %}
+
+                    <p style="color: red;">Error en los datos!</p>
+            
+                {% endif %}
+            
+                <form action="" method="POST">{% csrf_token %}
+            
+                    <table>
+            
+                        {{ miFormulario.as_table }}
+            
+                    </table>
+            
+                    <input type="submit", value="Enviar">
+            
+                </form>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    
+    
+{% endblock  %}
